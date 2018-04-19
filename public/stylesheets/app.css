@@ -1,0 +1,10 @@
+html {
+  background-color: red;
+}
+body {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  padding: 1em;
+}

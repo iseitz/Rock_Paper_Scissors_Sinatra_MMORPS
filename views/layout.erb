@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MMORPS GAME</title>
+    <link rel="stylesheet" href="../public/stylesheets/app.css">
+  </head>
+
+  <body>
+    <div id = "base"
+    <center>
+      <h1>MMORPS</h1>
+    </center>
+    <hr size="4", color="black">
+    <br>
+
+    <% if @message %>
+    <%= @message %>
+    <% end %>
+
+    <hr size="4", color="black">
+    <br>
+    <table>
+      <tr>
+        <th> Player </th>
+        <th> Score </th>
+      </tr>
+      <tr>
+        <td> Human: </td> <td> <%= session[:player_score] %> </td>
+      </tr>
+      <tr>
+        <td> Computer: </td> <td> <%= session[:computer_score] %> </td>
+      </tr>
+    </table>
+
+    <% if @end_message %>
+    <h2><%= @end_message %></h2>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  </body>
+</html>

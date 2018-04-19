@@ -1,0 +1,11 @@
+<form action="/" method="post">
+  <% if @winner %>
+    <%= @message_winner %>
+    <%= erb :"_reset" %>
+  <% else %>
+    <%= "Choose rock, paper or scissors!" %>
+    <button type="submit" name="player_choice" value="rock"> rock </buttton>
+    <button type="submit" name="player_choice" value="paper">paper</buttton>
+    <button type="submit" name="player_choice" value="scissors">scissors</button>
+  <% end %>
+</form>
