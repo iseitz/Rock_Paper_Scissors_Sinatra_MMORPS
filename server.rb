@@ -3,8 +3,7 @@ require 'sinatra/cookies'
 require 'pry'
 require 'openssl'
 require 'uri'
-require 'time'
-require "openssl"
+
 
 Dir[settings.root + "/models/*.rb"]. each {|file| require file}
 
@@ -44,13 +43,13 @@ get '/' do
 
   if session[:player_score] == 2
     session[:winner] = "Human"
-    redirect '/_reset'
+    redirect '/reset'
     erb :_reset
   end
 
   if session[:computer_score] == 2
     session[:winner] = "Computer"
-    redirect '/_reset'
+    redirect '/reset'
     erb :_reset
   end
 
@@ -87,7 +86,7 @@ post '/' do
 end
 
 
-post '/_reset' do
+post '/reset' do
   if params[:player_choice] == "play_again"
     session.delete(:player_score)
     redirect '/'
@@ -95,11 +94,12 @@ post '/_reset' do
   end
 end
 
-get '/_reset' do
+get '/reset' do
   @message = session[:message]
   @end_message = "#{session[:winner]} won this game. Woud you like to play again?"
   erb :_reset
 end
+
 
 # def computer_wins?
 #   if

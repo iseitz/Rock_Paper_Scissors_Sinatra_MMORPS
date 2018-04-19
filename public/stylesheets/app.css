@@ -1,10 +1,22 @@
 html {
-  background-color: red;
+  background-color: #F3F2F0;
 }
-body {
+.main-box {
+  display: block;
   width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: red;
+  margin: auto;
+  margin-top: 5em;
+  background-color: #FFFFFF;
   padding: 1em;
+}
+#table_header{
+  text-align: left;
+}
+button {
+  border-radius: 1em;
+  display: inline-block;
+  margin-top: 1em;
+}
+.button_margin{
+  margin-left: 1em;
 }
